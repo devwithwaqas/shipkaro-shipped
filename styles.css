@@ -1456,189 +1456,333 @@ body.modal-open {
 
 @media (min-width: 520px) {
   .detail-book {
-    width: min(700px, 100%);
+    width: min(720px, 100%);
   }
 
   .book-cover {
     display: flex;
+    align-items: stretch;
     position: relative;
-    width: 88px;
+    width: 118px;
     flex-shrink: 0;
     overflow: visible;
     transform-origin: right center;
-    transform: rotateY(72deg);
-    transition: transform 480ms cubic-bezier(0.2, 0.85, 0.25, 1);
-    filter: drop-shadow(-8px 0 24px rgba(107, 77, 184, 0.35));
+    transform: rotateY(78deg);
+    transition: transform 520ms cubic-bezier(0.2, 0.85, 0.25, 1);
+    filter: drop-shadow(-12px 4px 28px rgba(45, 31, 82, 0.45));
   }
 
   .detail-overlay.is-open .book-cover {
     transform: rotateY(0deg);
   }
 
-  .book-cover-spine {
-    position: relative;
-    width: 20px;
-    flex-shrink: 0;
-    background: linear-gradient(90deg, #4a3285 0%, #6B4DB8 45%, #5a3d9e 100%);
-    border-radius: 8px 0 0 8px;
-    box-shadow:
-      inset -3px 0 8px rgba(0, 0, 0, 0.2),
-      inset 2px 0 4px rgba(255, 255, 255, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  /* Stacked page edges peeking beside binding */
+  .book-page-stack {
+    position: absolute;
+    top: 14px;
+    bottom: 14px;
+    right: -7px;
+    width: 8px;
+    z-index: 0;
+    pointer-events: none;
   }
 
-  .book-spine-grooves {
+  .book-page-sheet {
     position: absolute;
-    inset: 8px 4px;
-    border-radius: 4px;
+    inset: 0;
+    border-radius: 0 2px 2px 0;
+    background: linear-gradient(90deg, #ebe8e2, #faf8f4 55%, #e8e5ee);
+    box-shadow: 1px 0 3px rgba(14, 11, 20, 0.06);
+  }
+
+  .book-page-sheet:nth-child(1) { transform: translateX(0); }
+  .book-page-sheet:nth-child(2) { transform: translateX(2px); opacity: 0.85; }
+  .book-page-sheet:nth-child(3) { transform: translateX(4px); opacity: 0.65; }
+
+  .book-binding {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-shrink: 0;
+    height: 100%;
+    filter: drop-shadow(-2px 0 6px rgba(0, 0, 0, 0.25));
+  }
+
+  /* Realistic cylindrical spine */
+  .book-spine {
+    position: relative;
+    width: 34px;
+    flex-shrink: 0;
+    border-radius: 6px 0 0 6px;
+    overflow: hidden;
+    background:
+      linear-gradient(90deg,
+        #1e1438 0%,
+        #3d2868 12%,
+        #6B4DB8 38%,
+        #8f6fd4 50%,
+        #6B4DB8 62%,
+        #3d2868 88%,
+        #1e1438 100%);
+    box-shadow:
+      inset -4px 0 10px rgba(0, 0, 0, 0.35),
+      inset 3px 0 6px rgba(255, 255, 255, 0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 28px 0;
+  }
+
+  .book-spine-leather {
+    position: absolute;
+    inset: 0;
+    background: url("assets/book-leather.svg");
+    background-size: 64px 64px;
+    opacity: 0.55;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
+  .book-spine-band {
+    position: absolute;
+    left: 3px;
+    right: 3px;
+    height: 10px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, #2a1d4a 0%, #5a3d9e 45%, #2a1d4a 100%);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.12),
+      0 3px 6px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+  }
+
+  .book-spine-band--a { top: 18%; }
+  .book-spine-band--b { top: 50%; transform: translateY(-50%); }
+  .book-spine-band--c { bottom: 18%; }
+
+  .book-spine-stitch {
+    position: absolute;
+    top: 16px;
+    bottom: 16px;
+    width: 2px;
     background: repeating-linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.06) 0px,
-      rgba(255, 255, 255, 0.06) 2px,
-      transparent 2px,
-      transparent 10px
+      transparent 0 5px,
+      rgba(232, 213, 163, 0.55) 5px 7px,
+      rgba(180, 150, 80, 0.35) 7px 8px,
+      transparent 8px 13px
     );
     pointer-events: none;
   }
 
-  .book-spine-initials {
+  .book-spine-stitch--outer { left: 4px; }
+  .book-spine-stitch--inner { right: 4px; }
+
+  .book-spine-title {
     position: relative;
     z-index: 1;
-    font-family: var(--font-mono);
-    font-size: 0.55rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    color: rgba(255, 255, 255, 0.35);
+    font-family: var(--font-display);
+    font-size: 0.62rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.22em;
+    color: color-mix(in srgb, #E8D5A3 85%, #fff);
     writing-mode: vertical-rl;
-    transform: rotate(180deg);
+    text-orientation: mixed;
+    text-transform: uppercase;
+    text-shadow:
+      0 1px 0 rgba(0, 0, 0, 0.4),
+      0 0 12px rgba(232, 213, 163, 0.25);
     user-select: none;
   }
 
+  .book-spine-mark {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(232, 213, 163, 0.35);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .book-spine-mark img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  }
+
+  .book-spine-publisher {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-mono);
+    font-size: 0.42rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(237, 230, 255, 0.55);
+    writing-mode: vertical-rl;
+    user-select: none;
+  }
+
+  /* Hinge crease between spine and cover */
+  .book-hinge {
+    width: 5px;
+    flex-shrink: 0;
+    background: linear-gradient(90deg,
+      rgba(0, 0, 0, 0.28) 0%,
+      rgba(255, 255, 255, 0.06) 40%,
+      rgba(0, 0, 0, 0.15) 100%);
+    box-shadow: inset -1px 0 2px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Cover face — leather hardcover strip */
   .book-cover-face {
     position: relative;
+    z-index: 1;
     flex: 1;
-    min-width: 58px;
-    background:
-      linear-gradient(165deg, rgba(255, 255, 255, 0.12) 0%, transparent 40%),
-      linear-gradient(160deg, #5a3d9e 0%, var(--purple-deep) 35%, var(--purple) 100%);
-    border-radius: 0 12px 12px 0;
+    min-width: 72px;
+    border-radius: 0 10px 10px 0;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 28px 12px;
+    justify-content: center;
+    gap: 20px;
+    padding: 24px 10px;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     transform: rotate(180deg);
-    gap: 18px;
-    overflow: visible;
-    border: 1.5px solid color-mix(in srgb, var(--purple-light) 35%, var(--purple-deep));
+    background:
+      linear-gradient(165deg, rgba(255, 255, 255, 0.08) 0%, transparent 35%),
+      linear-gradient(160deg, #3d2868 0%, var(--purple-deep) 40%, #7b56c9 100%);
+    border: 1.5px solid color-mix(in srgb, #E8D5A3 18%, var(--purple-deep));
     border-left: none;
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.15),
-      inset 0 0 30px rgba(0, 0, 0, 0.12),
-      4px 0 20px rgba(107, 77, 184, 0.2);
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      inset -6px 0 16px rgba(0, 0, 0, 0.18),
+      6px 0 24px rgba(107, 77, 184, 0.22);
+  }
+
+  .book-cover-leather {
+    position: absolute;
+    inset: 0;
+    background: url("assets/book-leather.svg");
+    background-size: 64px 64px;
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+    pointer-events: none;
   }
 
   .book-cover-sheen {
     position: absolute;
     inset: 0;
-    border-radius: 0 12px 12px 0;
     background: linear-gradient(
-      105deg,
-      transparent 40%,
-      rgba(255, 255, 255, 0.08) 48%,
-      transparent 56%
+      115deg,
+      transparent 35%,
+      rgba(255, 255, 255, 0.1) 46%,
+      transparent 58%
     );
     pointer-events: none;
   }
 
-  .book-cover-emblem {
+  .book-cover-medallion {
     position: relative;
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.14);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    box-shadow:
-      0 4px 14px rgba(0, 0, 0, 0.15),
-      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    width: 72px;
+    height: 72px;
     flex-shrink: 0;
+  }
+
+  .book-cover-foil-ring {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+  }
+
+  .book-cover-icon-well {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background:
+      radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.95), rgba(245, 240, 255, 0.88) 55%, rgba(237, 230, 255, 0.75));
+    border: 1.5px solid rgba(255, 255, 255, 0.65);
+    box-shadow:
+      0 0 0 1px rgba(107, 77, 184, 0.2),
+      0 6px 18px rgba(0, 0, 0, 0.22),
+      inset 0 2px 4px rgba(255, 255, 255, 0.9),
+      inset 0 -2px 6px rgba(107, 77, 184, 0.12);
   }
 
   .book-cover-icon {
-    width: 22px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 2px 4px rgba(107, 77, 184, 0.35));
     flex-shrink: 0;
   }
 
-  .book-cover-label {
+  .book-cover-type {
     position: relative;
     z-index: 1;
-    font-family: var(--font-body);
-    font-weight: 700;
-    font-size: 0.74rem;
-    color: var(--paper);
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .book-cover-label {
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    font-style: italic;
+    color: color-mix(in srgb, #E8D5A3 80%, var(--paper));
+    letter-spacing: 0.12em;
+    text-transform: capitalize;
     white-space: nowrap;
     line-height: 1;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
   }
 
   .book-cover-sub {
-    position: relative;
-    z-index: 1;
     font-family: var(--font-mono);
-    font-size: 0.52rem;
-    color: var(--purple-light);
-    letter-spacing: 0.1em;
+    font-size: 0.48rem;
+    color: rgba(237, 230, 255, 0.75);
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     white-space: nowrap;
-    line-height: 1.3;
-    opacity: 0.95;
+    line-height: 1.2;
   }
 
   .book-cover-foil {
-    position: relative;
-    z-index: 1;
     font-family: var(--font-mono);
-    font-size: 0.46rem;
-    letter-spacing: 0.12em;
+    font-size: 0.42rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: color-mix(in srgb, #E8D5A3 70%, var(--purple-light));
+    color: color-mix(in srgb, #E8D5A3 75%, var(--purple-light));
     white-space: nowrap;
-    opacity: 0.85;
+    opacity: 0.9;
     padding-top: 8px;
-    border-top: 1px solid rgba(232, 213, 163, 0.35);
-    margin-top: 4px;
-  }
-
-  .book-cover::after {
-    content: "";
-    position: absolute;
-    top: 10px;
-    bottom: 10px;
-    right: -5px;
-    width: 5px;
-    border-radius: 0 2px 2px 0;
-    background: repeating-linear-gradient(
-      180deg,
-      #f8f6f2 0px,
-      #f8f6f2 3px,
-      #e8e5ee 3px,
-      #e8e5ee 4px
-    );
-    box-shadow: 1px 0 4px rgba(14, 11, 20, 0.08);
-    pointer-events: none;
+    border-top: 1px solid rgba(232, 213, 163, 0.4);
   }
 }
 
@@ -1768,12 +1912,13 @@ body.modal-open {
 
 .detail-hero {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 22px;
-  align-items: start;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: center;
   margin: -8px -4px 24px;
   padding: 0 0 24px;
   border-bottom: 1.5px solid color-mix(in srgb, var(--purple) 12%, var(--rule));
+  text-align: center;
 }
 
 .detail-hero-visual {
@@ -1781,22 +1926,51 @@ body.modal-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 128px;
-  min-height: 128px;
-  padding: 16px;
-  border-radius: var(--radius-md);
-  border: 1.5px solid color-mix(in srgb, var(--purple) 16%, var(--rule));
-  background: linear-gradient(160deg, color-mix(in srgb, #2DD4BF 10%, var(--purple-soft)), var(--paper));
-  overflow: hidden;
+  width: min(100%, 200px);
+  height: 200px;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
   flex-shrink: 0;
+}
+
+.detail-hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--icon-glow), 0.22) 0%, transparent 68%);
+  pointer-events: none;
+  animation: detail-icon-pulse 3.2s ease-in-out infinite;
+}
+
+.detail-hero-visual::after {
+  content: "";
+  position: absolute;
+  width: 156px;
+  height: 156px;
+  border-radius: 50%;
+  border: 1.5px dashed color-mix(in srgb, var(--purple) 28%, var(--rule));
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+@keyframes detail-icon-pulse {
+  0%, 100% { transform: scale(0.96); opacity: 0.75; }
+  50% { transform: scale(1.04); opacity: 1; }
 }
 
 .detail-hero-visual-bg {
   position: absolute;
-  inset: 0;
+  inset: 24px;
+  border-radius: var(--radius-lg);
   background:
-    radial-gradient(ellipse 90% 80% at 50% 25%, color-mix(in srgb, var(--purple) 18%, transparent), transparent 70%),
+    radial-gradient(ellipse 100% 90% at 50% 30%, color-mix(in srgb, var(--purple) 14%, transparent), transparent 72%),
     linear-gradient(180deg, var(--purple-soft), transparent);
+  border: 1.5px solid color-mix(in srgb, var(--purple) 14%, var(--rule));
   pointer-events: none;
 }
 
@@ -1804,47 +1978,52 @@ body.modal-open {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 12%;
+  right: 12%;
   height: 3px;
+  border-radius: 0 0 4px 4px;
   background: linear-gradient(90deg, #9B6DFF, #2DD4BF, #38BDF8, #6B4DB8);
 }
 
 .detail-hero-visual .icon-stage {
   position: relative;
-  z-index: 1;
-  transform: scale(1.06);
+  z-index: 2;
+  transform: scale(1.12);
 }
 
 .detail-hero-visual .card-icon {
-  border: 1.5px solid color-mix(in srgb, var(--purple) 28%, var(--rule));
+  border: 2px solid rgba(255, 255, 255, 0.92);
+  border-radius: 22%;
   box-shadow:
+    0 0 0 1px rgba(var(--icon-glow), 0.2),
     0 1px 0 rgba(255, 255, 255, 0.98) inset,
-    0 0 0 1px rgba(var(--icon-glow), 0.18),
-    0 12px 32px rgba(var(--icon-glow), 0.28),
-    0 8px 22px rgba(107, 77, 184, 0.14);
+    0 16px 40px rgba(var(--icon-glow), 0.32),
+    0 8px 24px rgba(107, 77, 184, 0.18),
+    0 2px 8px rgba(14, 11, 20, 0.08);
 }
 
 .detail-hero-visual .icon-tile {
+  border-radius: 22%;
   box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.85),
-    0 2px 16px rgba(var(--icon-glow), 0.28);
+    inset 0 0 0 1px rgba(255, 255, 255, 0.9),
+    0 4px 20px rgba(var(--icon-glow), 0.3);
 }
 
 .icon-stage.card-icon--lg .icon-tile,
 .icon-stage.card-icon--lg .card-icon .icon-tile {
-  width: 104px;
-  height: 104px;
+  width: 112px;
+  height: 112px;
 }
 
 .icon-stage.card-icon--lg .icon-tile .icon-art {
-  width: 104px;
-  height: 104px;
+  width: 112px;
+  height: 112px;
 }
 
 .detail-head {
   min-width: 0;
   padding-top: 4px;
+  text-align: left;
 }
 
 .detail-title {
@@ -2012,15 +2191,21 @@ body.modal-open {
 }
 
 @media (max-width: 480px) {
-  .detail-hero {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    text-align: center;
+  .detail-hero-visual {
+    width: min(100%, 168px);
+    height: 168px;
   }
 
-  .detail-hero-visual {
-    min-width: 120px;
-    min-height: 120px;
+  .detail-hero-visual::after {
+    width: 132px;
+    height: 132px;
+  }
+
+  .icon-stage.card-icon--lg .icon-tile,
+  .icon-stage.card-icon--lg .card-icon .icon-tile,
+  .icon-stage.card-icon--lg .icon-tile .icon-art {
+    width: 96px;
+    height: 96px;
   }
 
   .detail-head .platform-chip {
