@@ -1,4 +1,4 @@
-/* ShipKaro Shipped — brand tokens (strict palette) */
+/* ShipKaro Shipped â€” brand tokens (strict palette) */
 :root {
   --purple: #9B6DFF;
   --purple-deep: #6B4DB8;
@@ -75,7 +75,7 @@ a:hover { color: var(--purple); }
   font-weight: 600;
 }
 
-/* Layout wrap — matches shipkaro.dev */
+/* Layout wrap â€” matches shipkaro.dev */
 .v1-wrap {
   max-width: 1180px;
   margin: 0 auto;
@@ -90,7 +90,7 @@ a:hover { color: var(--purple); }
   .v1-wrap { padding: 0 16px; }
 }
 
-/* Nav — ported from shipkaro.dev */
+/* Nav â€” ported from shipkaro.dev */
 .v1-nav {
   position: sticky;
   top: 0;
@@ -506,7 +506,7 @@ a:hover { color: var(--purple); }
   box-shadow: 0 0 0 3px var(--purple-light);
 }
 
-/* Filters shell — tabs + clear inside one bar */
+/* Filters shell â€” tabs + clear inside one bar */
 .filters-shell {
   display: flex;
   align-items: center;
@@ -607,7 +607,7 @@ a:hover { color: var(--purple); }
   }
 }
 
-/* Category tabs — pill bar */
+/* Category tabs â€” pill bar */
 .category-tabs {
   display: flex;
   gap: 8px;
@@ -623,7 +623,7 @@ a:hover { color: var(--purple); }
   -webkit-overflow-scrolling: touch;
 }
 
-/* standalone category-tabs when not in shell — overridden by .filters-shell .category-tabs */
+/* standalone category-tabs when not in shell â€” overridden by .filters-shell .category-tabs */
 
 .category-tab {
   display: inline-flex;
@@ -806,7 +806,7 @@ a:hover { color: var(--purple); }
   .product-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
 }
 
-/* Product cards — personality icons + visual header band */
+/* Product cards â€” personality icons + visual header band */
 .product-card {
   position: relative;
   display: flex;
@@ -817,6 +817,8 @@ a:hover { color: var(--purple); }
   box-shadow: 0 3px 16px rgba(14, 11, 20, 0.06), 0 1px 0 rgba(255, 255, 255, 0.8) inset;
   transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 220ms ease, border-color 220ms ease;
   contain: layout style paint;
+  content-visibility: auto;
+  contain-intrinsic-size: 360px;
   overflow: hidden;
   isolation: isolate;
   cursor: pointer;
@@ -847,8 +849,8 @@ a:hover { color: var(--purple); }
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 40px rgba(155, 109, 255, 0.16), 0 4px 12px rgba(14, 11, 20, 0.06);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(155, 109, 255, 0.14), 0 4px 12px rgba(14, 11, 20, 0.06);
   border-color: color-mix(in srgb, var(--purple) 45%, var(--rule));
 }
 
@@ -940,6 +942,7 @@ a:hover { color: var(--purple); }
   justify-content: center;
   min-height: 148px;
   padding: 30px 20px 20px;
+  transform: translateZ(0);
 }
 
 .card-visual-bg {
@@ -979,7 +982,7 @@ a:hover { color: var(--purple); }
     #FF3B30
   );
   background-size: 400% 100%;
-  animation: accent-sweep 5.5s linear infinite;
+  animation: accent-sweep 3.8s linear infinite;
 }
 
 @keyframes accent-sweep {
@@ -987,10 +990,11 @@ a:hover { color: var(--purple); }
   100% { background-position: 400% 50%; }
 }
 
-/* Icon stage — square tile, shipkaro-style pedestal */
+/* Icon stage â€” square tile, shipkaro-style pedestal */
 .icon-stage {
   position: relative;
   z-index: 2;
+  will-change: transform;
   transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
   transform: translateY(-1px) scale(1.03);
 }
@@ -1053,7 +1057,7 @@ a:hover { color: var(--purple); }
   transform: none;
 }
 
-/* Platform icon chips — prominent store badges */
+/* Platform icon chips â€” prominent store badges */
 .platform-chip {
   position: absolute;
   top: 10px;
@@ -1179,6 +1183,25 @@ a:hover { color: var(--purple); }
   flex-direction: column;
 }
 
+.card-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  margin-bottom: 8px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--purple-soft) 65%, var(--paper));
+  border: 1px solid color-mix(in srgb, var(--purple) 12%, var(--rule));
+  color: var(--purple-deep);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
 .card-name {
   font-family: var(--font-display);
   font-size: 1.28rem;
@@ -1189,7 +1212,7 @@ a:hover { color: var(--purple); }
   letter-spacing: -0.02em;
 }
 
-/* Play Store–style ratings */
+/* Play Storeâ€“style ratings */
 .card-rating {
   display: inline-flex;
   align-items: center;
@@ -1408,7 +1431,7 @@ a:hover { color: var(--purple); }
   border: 1px dashed var(--rule);
 }
 
-/* Detail overlay — book open (GPU transform only) */
+/* Detail overlay â€” book open (GPU transform only) */
 body.modal-open {
   overflow: hidden;
 }
@@ -1430,9 +1453,9 @@ body.modal-open {
 .detail-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(14, 11, 20, 0.45);
+  background: rgba(14, 11, 20, 0.42);
   opacity: 0;
-  transition: opacity 320ms ease;
+  transition: opacity 220ms ease;
 }
 
 .detail-overlay.is-open .detail-backdrop {
@@ -1446,14 +1469,15 @@ body.modal-open {
   height: min(88vh, 680px);
   max-height: min(88vh, 680px);
   perspective: 1200px;
-  transform: translateY(12px);
+  transform: translateY(10px) scale(0.985);
   opacity: 0;
-  transition: transform 420ms cubic-bezier(0.2, 0.85, 0.25, 1), opacity 320ms ease;
+  transition: transform 260ms cubic-bezier(0.2, 0.85, 0.25, 1), opacity 180ms ease;
+  will-change: transform, opacity;
   --icon-glow: 155, 109, 255;
 }
 
 .detail-overlay.is-open .detail-book {
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
   opacity: 1;
 }
 
@@ -1474,8 +1498,8 @@ body.modal-open {
     flex-shrink: 0;
     overflow: visible;
     transform-origin: right center;
-    transform: rotateY(78deg);
-    transition: transform 520ms cubic-bezier(0.2, 0.85, 0.25, 1);
+    transform: rotateY(26deg) translateX(2px);
+    transition: transform 300ms cubic-bezier(0.2, 0.85, 0.25, 1);
     filter: drop-shadow(-4px 1px 10px rgba(45, 31, 82, 0.2));
   }
 
@@ -1640,8 +1664,8 @@ body.modal-open {
     0 28px 72px rgba(107, 77, 184, 0.18),
     0 8px 28px rgba(14, 11, 20, 0.1);
   transform-origin: left center;
-  transform: rotateY(-82deg);
-  transition: transform 480ms cubic-bezier(0.2, 0.85, 0.25, 1);
+  transform: translateX(-8px);
+  transition: transform 280ms cubic-bezier(0.2, 0.85, 0.25, 1);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -1668,7 +1692,7 @@ body.modal-open {
 }
 
 .detail-overlay.is-open .book-page {
-  transform: rotateY(0deg);
+  transform: translateX(0);
 }
 
 .book-close {
@@ -1704,6 +1728,7 @@ body.modal-open {
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
   scrollbar-gutter: stable;
+  content-visibility: auto;
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--purple-soft) 18%, var(--paper)) 0%, var(--paper) 120px),
     repeating-linear-gradient(
@@ -1726,7 +1751,7 @@ body.modal-open {
   border-radius: 999px;
 }
 
-/* Open book — page content layout */
+/* Open book â€” page content layout */
 .book-sheet {
   display: flex;
   flex-direction: column;
@@ -1740,7 +1765,7 @@ body.modal-open {
   gap: 20px;
   align-items: center;
   padding: 20px;
-  margin-bottom: 22px;
+  margin-bottom: 16px;
   border-radius: var(--radius-md);
   border: 1px solid color-mix(in srgb, var(--purple) 12%, var(--rule));
   background: linear-gradient(145deg, var(--paper), color-mix(in srgb, var(--purple-soft) 35%, var(--paper)));
@@ -1823,6 +1848,46 @@ body.modal-open {
   font-size: 1rem;
   font-weight: 400;
   color: var(--ink);
+}
+
+.detail-ship-log {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 22px;
+}
+
+.detail-ship-log div {
+  min-width: 0;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid color-mix(in srgb, var(--purple) 10%, var(--rule));
+  background: color-mix(in srgb, var(--purple-soft) 34%, var(--paper));
+}
+
+.detail-log-label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--mute);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.detail-ship-log strong {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 .detail-about {
@@ -1960,6 +2025,10 @@ body.modal-open {
 }
 
 @media (max-width: 480px) {
+  .detail-ship-log {
+    grid-template-columns: 1fr;
+  }
+
   .book-page-inner {
     padding: 22px 18px 28px;
   }
@@ -2047,7 +2116,7 @@ body.modal-open {
   color: var(--purple-deep);
 }
 
-/* Responsive — layout polish */
+/* Responsive â€” layout polish */
 @media (max-width: 900px) {
   .hero {
     padding: 36px 20px 28px;
@@ -2184,6 +2253,20 @@ body.modal-open {
   .detail-book {
     height: min(94vh, 100%);
     max-height: 94vh;
+    transform: translateY(18px);
+  }
+
+  .detail-overlay.is-open .detail-book {
+    transform: translateY(0);
+  }
+
+  .book-page {
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    transform: translateY(16px);
+  }
+
+  .detail-overlay.is-open .book-page {
+    transform: translateY(0);
   }
 
   .book-page-inner {

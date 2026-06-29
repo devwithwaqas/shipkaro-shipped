@@ -166,7 +166,7 @@
         glowCache.set(key, glow);
         applyGlowVars(host, glow);
       } catch {
-        /* cross-origin or tainted canvas — keep type fallback */
+        /* cross-origin or tainted canvas â€” keep type fallback */
       }
     };
 
@@ -174,6 +174,14 @@
       requestIdleCallback(run, { timeout: 300 });
     } else {
       setTimeout(run, 0);
+    }
+  }
+
+  function scheduleIdle(fn, timeout = 500) {
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(fn, { timeout });
+    } else {
+      setTimeout(fn, 16);
     }
   }
 
@@ -228,6 +236,9 @@
   let searchQuery = "";
   let sortBy = "name-asc";
   let lastFocus = null;
+  let productById = new Map();
+  const detailCache = new Map();
+  let iconGlowObserver;
 
   const els = {
     grid: document.getElementById("product-grid"),
@@ -319,17 +330,17 @@
   function cleanSummary(text, fallback, maxLen = 320) {
     if (!text || isBoilerplate(text)) return fallback;
     if (!maxLen) return text;
-    return text.length > maxLen ? `${text.slice(0, maxLen - 1)}…` : text;
+    return text.length > maxLen ? `${text.slice(0, maxLen - 1)}â€¦` : text;
   }
 
   function cleanTitle(title, fallback) {
     if (!title) return fallback;
     return (
       title
-        .replace(/\s*[-–|]\s*Apps on Google Play$/i, "")
-        .replace(/\s*[-–|]\s*App Store$/i, "")
-        .replace(/\s*[-–|]\s*Product Hunt$/i, "")
-        .replace(/\s*[-–|]\s*Shopify App Store$/i, "")
+        .replace(/\s*[-â€“|]\s*Apps on Google Play$/i, "")
+        .replace(/\s*[-â€“|]\s*App Store$/i, "")
+        .replace(/\s*[-â€“|]\s*Product Hunt$/i, "")
+        .replace(/\s*[-â€“|]\s*Shopify App Store$/i, "")
         .trim() || fallback
     );
   }
@@ -347,17 +358,19 @@
     }
   }
 
-  function renderIcon(product, sizeClass) {
+  function renderIcon(product, sizeClass, options = {}) {
     const meta = getMeta(product);
     const lg = sizeClass?.includes("lg");
     const px = lg ? 104 : 80;
+    const loading = options.loading || (lg ? "eager" : "lazy");
+    const fetchPriority = options.fetchPriority ? ` fetchpriority="${options.fetchPriority}"` : "";
     const fallback = window.ShipIcons.build(product);
 
     if (meta.icon) {
       return `<div class="icon-stage ${sizeClass || ""}">
         <div class="card-icon card-icon--app" data-product-id="${escapeHtml(product.id)}">
           <div class="icon-tile">
-            <img src="${escapeHtml(meta.icon)}" alt="" width="${px}" height="${px}" loading="lazy" decoding="async"
+            <img src="${escapeHtml(meta.icon)}" alt="" width="${px}" height="${px}" loading="${loading}" decoding="async"${fetchPriority}
               class="app-icon-img">
           </div>
           <div class="icon-fallback" hidden aria-hidden="true">${fallback.svg}</div>
@@ -385,7 +398,7 @@
     wrap.classList.add("card-icon--generated");
     if (scene) wrap.dataset.scene = scene;
     const productId = wrap.dataset.productId;
-    const product = products.find((p) => p.id === productId);
+    const product = productById.get(productId) || products.find((p) => p.id === productId);
     if (product && host) {
       const built = window.ShipIcons.build(product);
       const glow = boostGlow(hexToRgb(built.glow));
@@ -394,7 +407,31 @@
     }
   }
 
-  function attachIconFallbacks(root) {
+  function queueIconGlow(img, immediate = false) {
+    if (immediate) {
+      sampleIconGlow(img);
+      return;
+    }
+
+    if (!iconGlowObserver && "IntersectionObserver" in window) {
+      iconGlowObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          iconGlowObserver.unobserve(entry.target);
+          sampleIconGlow(entry.target);
+        });
+      }, { rootMargin: "240px 0px" });
+    }
+
+    if (iconGlowObserver) {
+      iconGlowObserver.observe(img);
+    } else {
+      scheduleIdle(() => sampleIconGlow(img), 700);
+    }
+  }
+
+  function attachIconFallbacks(root, options = {}) {
+    const immediate = Boolean(options.immediate);
     root.querySelectorAll(".card-icon--app img").forEach((img) => {
       img.onerror = () => swapToFallback(img);
       img.onload = () => {
@@ -404,11 +441,11 @@
           swapToFallback(img);
           return;
         }
-        sampleIconGlow(img);
+        queueIconGlow(img, immediate);
       };
       if (img.complete && img.naturalWidth) {
         const { naturalWidth: w, naturalHeight: h } = img;
-        if (w && h && Math.abs(w - h) <= Math.max(w, h) * 0.12) sampleIconGlow(img);
+        if (w && h && Math.abs(w - h) <= Math.max(w, h) * 0.12) queueIconGlow(img, immediate);
       }
     });
 
@@ -469,6 +506,7 @@
     const cityLine = product.city
       ? `<span class="builder-city">${escapeHtml(product.city)}</span>`
       : "";
+    const liveState = product.link ? "Live" : "Pending";
 
     const linkBlock = product.link
       ? `<a class="card-link" href="${escapeHtml(product.link)}" target="_blank" rel="noopener noreferrer" data-stop-card>
@@ -486,9 +524,14 @@
         <div class="card-visual-bg" aria-hidden="true"></div>
         ${renderIcon(product)}
         ${platformChip(product.type)}
-        <span class="card-peek" aria-hidden="true">Open →</span>
+        <span class="card-peek" aria-hidden="true">Open â†’</span>
       </div>
       <div class="card-body">
+        <div class="card-kicker">
+          <span>${escapeHtml(typeLabel(product.type))}</span>
+          <span aria-hidden="true">/</span>
+          <span>${liveState}</span>
+        </div>
         <h3 class="card-name">${escapeHtml(meta.title)}</h3>
         ${renderRating(product, "card-rating")}
         <p class="card-desc">${escapeHtml(meta.summary)}</p>
@@ -506,19 +549,19 @@
 
   function renderDetail(product) {
     const meta = getMeta(product, { full: true });
-    const city = product.city ? ` · ${escapeHtml(product.city)}` : "";
+    const city = product.city ? ` Â· ${escapeHtml(product.city)}` : "";
     const statusPill = product.link
       ? '<span class="detail-status detail-status--live">Live</span>'
       : '<span class="detail-status detail-status--soon">Link pending</span>';
 
     const linksBlock = product.link
       ? `<a class="btn btn-ink detail-cta" href="${escapeHtml(product.link)}" target="_blank" rel="noopener noreferrer">
-            ${escapeHtml(linkLabel(product.link))} →
+            ${escapeHtml(linkLabel(product.link))} â†’
           </a>
           <a class="detail-source-link" href="${escapeHtml(product.link)}" target="_blank" rel="noopener noreferrer">
             ${escapeHtml(shortUrl(product.link))}
           </a>`
-      : `<p class="detail-soon">Live link coming soon — still shipped, still counts.</p>`;
+      : `<p class="detail-soon">Live link coming soon â€” still shipped, still counts.</p>`;
 
     const aboutParagraphs = meta.about
       .split(/\n\n+/)
@@ -529,6 +572,7 @@
           : `<p class="detail-desc">${escapeHtml(p.trim())}</p>`
       )
       .join("");
+    const detailLinkLabel = product.link ? linkLabel(product.link) : "Not shared yet";
 
     return `
       <article class="book-sheet">
@@ -536,7 +580,7 @@
           <div class="detail-masthead-visual">
             <div class="detail-icon-aura" aria-hidden="true"></div>
             <div class="detail-icon-frame">
-              ${renderIcon(product, "card-icon--lg")}
+              ${renderIcon(product, "card-icon--lg", { loading: "eager", fetchPriority: "high" })}
             </div>
           </div>
           <div class="detail-masthead-body">
@@ -553,6 +597,21 @@
           </div>
         </header>
 
+        <section class="detail-ship-log" aria-label="Ship log">
+          <div>
+            <span class="detail-log-label">Platform</span>
+            <strong>${escapeHtml(typeLabel(product.type))}</strong>
+          </div>
+          <div>
+            <span class="detail-log-label">Status</span>
+            <strong>${product.link ? "Public link" : "Link pending"}</strong>
+          </div>
+          <div>
+            <span class="detail-log-label">Destination</span>
+            <strong>${escapeHtml(detailLinkLabel)}</strong>
+          </div>
+        </section>
+
         <section class="detail-about" aria-labelledby="detail-about-label">
           <h3 class="detail-section-label" id="detail-about-label">About this ship</h3>
           <div class="detail-prose">${aboutParagraphs}</div>
@@ -567,27 +626,45 @@
       </article>`;
   }
 
+  function detailHtml(product) {
+    if (!detailCache.has(product.id)) {
+      detailCache.set(product.id, renderDetail(product));
+    }
+    return detailCache.get(product.id);
+  }
+
+  function warmDetailCache() {
+    let index = 0;
+    const warm = () => {
+      const chunk = products.slice(index, index + 8);
+      chunk.forEach((product) => detailHtml(product));
+      index += chunk.length;
+      if (index < products.length) scheduleIdle(warm, 900);
+    };
+    scheduleIdle(warm, 900);
+  }
+
   function shortUrl(url) {
     try {
       const u = new URL(url);
       const path = u.pathname.replace(/\/$/, "");
       const shown = u.hostname.replace(/^www\./, "") + path;
-      return shown.length > 48 ? `${shown.slice(0, 45)}…` : shown;
+      return shown.length > 48 ? `${shown.slice(0, 45)}â€¦` : shown;
     } catch {
       return url;
     }
   }
 
   function openDetail(id) {
-    const product = products.find((p) => p.id === id);
+    const product = productById.get(id);
     if (!product) return;
 
     lastFocus = document.activeElement;
     const meta = getMeta(product);
-    els.detailContent.innerHTML = renderDetail(product);
+    els.detailContent.innerHTML = detailHtml(product);
     els.book.dataset.type = product.type;
     applyGlowVars(els.book, cardGlowRgb(product, meta));
-    attachIconFallbacks(els.detailContent);
+    attachIconFallbacks(els.detailContent, { immediate: true });
     els.overlay.hidden = false;
     document.body.classList.add("modal-open");
 
@@ -605,7 +682,6 @@
       if (e.target !== els.book) return;
       els.book.removeEventListener("transitionend", onEnd);
       els.overlay.hidden = true;
-      els.detailContent.innerHTML = "";
       lastFocus?.focus();
     };
 
@@ -613,7 +689,6 @@
     setTimeout(() => {
       if (!els.overlay.classList.contains("is-open")) {
         els.overlay.hidden = true;
-        els.detailContent.innerHTML = "";
         lastFocus?.focus();
       }
     }, 500);
@@ -701,10 +776,10 @@
     }
 
     if (hasFilters) {
-      const tabName = activeTab === "all" ? "" : ` · ${typeLabel(activeTab)}`;
+      const tabName = activeTab === "all" ? "" : ` Â· ${typeLabel(activeTab)}`;
       els.resultsText.textContent = `Showing ${filtered.length} of ${products.length}${tabName}`;
     } else {
-      els.resultsText.textContent = `All ${products.length} community ships · click a card to open`;
+      els.resultsText.textContent = `All ${products.length} community ships Â· click a card to open`;
     }
   }
 
@@ -772,6 +847,7 @@
       if (!prodRes.ok) throw new Error("Failed to load products");
       products = await prodRes.json();
       if (enrichRes.ok) enrichment = await enrichRes.json();
+      productById = new Map(products.map((product) => [product.id, product]));
     } catch (err) {
       els.resultsText.textContent = "Could not load products.json";
       console.error(err);
@@ -781,6 +857,7 @@
     initCounter();
     renderTabs();
     updateUI();
+    warmDetailCache();
 
     els.search.addEventListener("input", onSearchInput);
     els.sort.addEventListener("change", onSortChange);
