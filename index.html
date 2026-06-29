@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="71 products shipped by the ShipKaro community — apps, web tools, AI products, and more.">
+  <title>Shipped — ShipKaro Community Directory</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="icon" type="image/png" href="assets/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to products</a>
+
+  <header class="v1-nav" id="site-nav">
+    <div class="v1-wrap v1-nav-inner">
+      <a class="v1-logo" href="https://www.shipkaro.dev/" target="_blank" rel="noopener">
+        <img src="https://www.shipkaro.dev/assets/shipkaro_logo_light.png" alt="shipkaro" width="150" height="32" fetchpriority="high">
+      </a>
+      <div class="v1-nav-links">
+        <a href="https://www.shipkaro.dev/">Home</a>
+        <a href="https://1dayapp.shipkaro.dev" target="_blank" rel="noopener">Build</a>
+        <a href="https://www.shipkaro.dev/events">Events</a>
+        <a href="#main" class="has-active" aria-current="page">Shipped <span class="v1-nav-dot" aria-hidden="true"></span></a>
+        <a class="v1-nav-cta" href="https://shipkaro.dev/community" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Join Community
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span class="badge-text">Wall of shipped · Community builds</span>
+          </div>
+          <h1 class="hero-title">
+            <span class="strike">Perfecting.</span>
+            <span class="highlight">Shipped.</span>
+          </h1>
+          <p class="hero-desc">
+            Real products built and launched by Pakistan's indie hackers — Android apps, iOS tools, web SaaS, AI utilities, and more from the ShipKaro community.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-block">
+              <span class="stat-number" id="total-count" data-target="71">0</span>
+              <span class="stat-label">products shipped</span>
+            </div>
+            <div class="stat-block">
+              <span class="stat-number" id="visible-count">0</span>
+              <span class="stat-label">showing now</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Directory controls">
+          <div class="panel-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 14 14" fill="none"><path d="M3 10V4h5.5M8.5 4L11 6.5M11 6.5L8.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h2 class="panel-title">find a ship</h2>
+          <p class="panel-desc">Search and sort the full directory. Use category tabs below to browse by platform.</p>
+
+          <label class="search-wrap">
+            <span class="visually-hidden">Search products</span>
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="search" id="search" placeholder="Search name or description…" autocomplete="off" enterkeyhint="search">
+          </label>
+
+          <div class="control-row">
+            <label class="select-wrap">
+              <span class="control-label">Sort by</span>
+              <select id="sort">
+                <option value="name-asc">Name A → Z</option>
+                <option value="name-desc">Name Z → A</option>
+                <option value="type">Type</option>
+                <option value="has-link">Has link first</option>
+              </select>
+            </label>
+          </div>
+
+        </aside>
+      </div>
+    </section>
+
+    <section class="grid-section" aria-live="polite" aria-atomic="false">
+      <div class="filters-shell">
+        <nav class="category-tabs" id="category-tabs" role="tablist" aria-label="Filter by category">
+          <!-- populated by JS -->
+        </nav>
+        <div class="filters-shell-actions">
+          <button type="button" class="clear-filters-btn is-dimmed" id="clear-filters" disabled aria-label="Clear all filters">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            <span class="clear-filters-text">Clear filters</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid-toolbar">
+        <p class="results-text" id="results-text">Loading products…</p>
+      </div>
+      <div class="product-grid" id="product-grid" role="list"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <p class="empty-title">No ships found</p>
+        <p class="empty-desc">Try a different search or clear your filters.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="detail-overlay" id="detail-overlay" hidden>
+    <div class="detail-backdrop" data-close aria-hidden="true"></div>
+    <div class="detail-book" id="detail-book" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+      <div class="book-cover" aria-hidden="true">
+        <div class="book-cover-spine">
+          <span class="book-spine-grooves" aria-hidden="true"></span>
+          <span class="book-spine-initials" aria-hidden="true">SK</span>
+        </div>
+        <div class="book-cover-face">
+          <span class="book-cover-sheen" aria-hidden="true"></span>
+          <div class="book-cover-emblem">
+            <img src="assets/favicon.png" alt="" class="book-cover-icon" width="24" height="24">
+          </div>
+          <span class="book-cover-label">shipkaro</span>
+          <span class="book-cover-sub">shipped directory</span>
+          <span class="book-cover-foil" aria-hidden="true">shipped &gt; perfect</span>
+        </div>
+      </div>
+      <div class="book-page">
+        <button type="button" class="book-close" id="detail-close" aria-label="Close details">×</button>
+        <div class="book-page-inner" id="detail-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>Built for the <a href="https://1dayapp.shipkaro.dev/challenge.html">ShipKaro Shipped Challenge</a></p>
+      <p class="footer-mono">shipped &gt; perfect</p>
+    </div>
+  </footer>
+
+  <script src="icons.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

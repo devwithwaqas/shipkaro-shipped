@@ -1,0 +1,464 @@
+{
+  "rendara": {
+    "icon": null,
+    "title": "Rendara",
+    "summary": "AI interior-design SaaS: upload a room photo to generate a renovated room, supports floor plans",
+    "source": "https://rendara-frontend.vercel.app/",
+    "fetched": false
+  },
+  "lume-voice": {
+    "icon": "https://lumevoice.com/apple-touch-icon.webp",
+    "title": "LumeVoice | #1 AI Voice Dictation Tool for Android & Mac",
+    "summary": "Stop typing, start talking. LumeVoice is now live on Android and macOS! The best AI voice dictation tool for your phone and computer. Write 5x faster with natural speech-to-text.",
+    "source": "https://lumevoice.com/",
+    "fetched": true
+  },
+  "headshots-generator": {
+    "icon": "https://play-lh.googleusercontent.com/kfHnKz_QcvM-qihP46pSh650cv6k4KMyqrmuqJxT88zzl7bwDkn8qiycQs9HNn13bUu8y6Ku9BvCfzZI17OtXg=w128-h128-rw",
+    "title": "AI Headshot Generator: Profile - Apps on Google Play",
+    "summary": "Professional AI headshots for LinkedIn & CV. Studio-quality photos in minutes.",
+    "source": "https://play.google.com/store/apps/details?id=com.vivd.labs.photo.editor.image.generator",
+    "fetched": true
+  },
+  "stamp-wallet": {
+    "icon": null,
+    "title": "Stamp Wallet",
+    "summary": "Digital stamp/loyalty card wallet app",
+    "source": "https://play.google.com/store/apps/details?id=space.alchemify.stampwallet",
+    "fetched": false
+  },
+  "photo-enhancer": {
+    "icon": "https://play-lh.googleusercontent.com/NL0oSxb828h6SsC6RcainNverSbFyVPSgn31Q30u_-jixlGNRI412h23xZM8xx3_RlBtqsOWHqfgKDmq4zJLBQ=w128-h128-rw",
+    "title": "AI Photo Enhancer & Unblur - Apps on Google Play",
+    "summary": "Enhance blurry photos, upscale image quality and unblur pictures with AI.",
+    "source": "https://play.google.com/store/apps/details?id=com.vivd.labs.photo.editor.image.enhancer",
+    "fetched": true
+  },
+  "hostelbook": {
+    "icon": "https://play-lh.googleusercontent.com/Arz48ojOIo6LP3LcrACxEzqz2-jTghNBYtNbCIuU4ReTeAp4d7Bo82-No203SqE0FFb47UVvteBENYZto-RCTA=w128-h128-rw",
+    "title": "HostelBook - Apps on Google Play",
+    "summary": "Hostel management platform for payments, operations, and tenants",
+    "source": "https://play.google.com/store/apps/details?id=com.hostelbook.mobile",
+    "fetched": true
+  },
+  "habit-mosaic": {
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ea/8f/8a/ea8f8afe-80b4-9719-cd39-a91c9cb77f00/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/64x64ia-75.webp",
+    "title": "Habit Mosaic —  Habit Tracker App - App Store",
+    "summary": "Download Habit Mosaic —  Habit Tracker by Muhammad Rafhan on the App Store. See screenshots, ratings and reviews, user tips and more games like Habit Mosaic —…",
+    "source": "https://apps.apple.com/pk/app/habit-mosaic-habit-tracker/id6767997932",
+    "fetched": true
+  },
+  "keepr-wardrobe": {
+    "icon": "https://play-lh.googleusercontent.com/XzUaKr3V0Y1sILH-8AOYqGCaa6lWKDNNzTVZUe3cpktAyqraSi70EkfaZBTmroIarUny9Lz07VHKYUKrKUm8=w128-h128-rw",
+    "title": "Keepr: Wardrobe Organizer - Apps on Google Play",
+    "summary": "Wardrobe organizer, outfit planner & laundry tracker — find anything you own.",
+    "source": "https://play.google.com/store/apps/details?id=com.keepr.wardrobe&hl=en-US",
+    "fetched": true
+  },
+  "begum-gees-ai-recipe-planner": {
+    "icon": "https://play-lh.googleusercontent.com/p36tbhqIqxYhfZgFZ50bMRqhGCxvSfN5VGm_zXk_Pot3UEBe94bUfKBMzbHGtXqOIqftmw6ql4BJLy_eP3GclEs=w128-h128-rw",
+    "title": "Begum Gees - AI Recipe Planner - Apps on Google Play",
+    "summary": "AI cooking suggestions based on family preferences",
+    "source": "https://play.google.com/store/apps/details?id=com.itcians.begumgees",
+    "fetched": true
+  },
+  "thulla": {
+    "icon": "https://play-lh.googleusercontent.com/b7i7tA623y_zQjOpOb6zO8xXDz6s3QvJcUruZxKLYqm2m04hdK0pNROo8ZRol-vhG8OP-9ppIz1bnu7xNHVC=w128-h128-rw",
+    "title": "Bhabhi Thulla - Apps on Google Play",
+    "summary": "Play Bhabhi Thulla online with friends — coins, rooms and daily bonus.",
+    "source": "https://play.google.com/store/apps/details?id=com.faizandev43.thullaandroid",
+    "fetched": true
+  },
+  "begum-gees-ios": {
+    "icon": null,
+    "title": "Begum Gees - AI Recipe Planner App - App Store",
+    "summary": "Download Begum Gees - AI Recipe Planner by ITcians LLC on the App Store. See screenshots, ratings and reviews, user tips and more games like Begum Gees - AI…",
+    "source": "https://apps.apple.com/pk/app/begum-gees-ai-recipe-planner/id6768031333",
+    "fetched": false
+  },
+  "smartfolio": {
+    "icon": "https://play-lh.googleusercontent.com/MpHTAl_xtntykdb4_9VhbXP0rUQTXT5Q6QYCF-VtXgC2Uy_Dmu4A15QE3iCjKeDbg22tA9_TcY-SVXo-wxgssA=w128-h128-rw",
+    "title": "SmartFolio - Portfolio Tracker - Apps on Google Play",
+    "summary": "📈 Track PSX portfolios, dividends, watchlists & broker statement imports.",
+    "source": "https://play.google.com/store/apps/details?id=com.sadastocks",
+    "fetched": true
+  },
+  "proof": {
+    "icon": "https://play-lh.googleusercontent.com/_Zfb8btDUszq0dfYpHhuPTBnXCxjWsBeD1N3HMACmKW82VbVHZJKa1KZ1oqr4eAIVYLslPjCVFKtfPHZc37p=w128-h128-rw",
+    "title": "DoneProof: GPS Photo Proof - Apps on Google Play",
+    "summary": "Capture GPS-stamped photos & generate secure PDF proof of completed work",
+    "source": "https://play.google.com/store/apps/details?id=com.done.proofapp",
+    "fetched": true
+  },
+  "beruni": {
+    "icon": null,
+    "title": "Beruni — The AWS scan for startups, not enterprises",
+    "summary": "The AWS scan for startups, not enterprises. We check IAM, S3, EC2, VPC, and RDS against CIS, FSBP, PCI, and GDPR controls. One read-only IAM role — scoped, revocable.",
+    "source": "https://beruni.app/",
+    "fetched": false
+  },
+  "onlee-one-sentence-daily": {
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ea/8f/8a/ea8f8afe-80b4-9719-cd39-a91c9cb77f00/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/64x64ia-75.webp",
+    "title": "Onlee - One sentence daily App - App Store",
+    "summary": "Download Onlee - One sentence daily by ZAPR LABS LLC on the App Store. See screenshots, ratings and reviews, user tips and more games like Onlee - One sentence…",
+    "source": "https://apps.apple.com/pk/app/onlee-one-sentence-daily/id6757363823",
+    "fetched": true
+  },
+  "jacked-girl-fitness": {
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ea/8f/8a/ea8f8afe-80b4-9719-cd39-a91c9cb77f00/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/400x400bb.webp);",
+    "title": "Jacked Girl Fitness App - App Store",
+    "summary": "Download Jacked Girl Fitness by ZAPR LABS LLC on the App Store. See screenshots, ratings and reviews, user tips and more games like Jacked Girl Fitness.",
+    "source": "https://apps.apple.com/pk/app/jacked-girl-fitness/id6468915983",
+    "fetched": true
+  },
+  "muslim-fyx-tech": {
+    "icon": "https://play-lh.googleusercontent.com/zVgQ9roPw0fXZWTdMtpg6EK6GDnsfsnqwXDZN4nFVMuz8tHXJvr3kPLMZ8yVNRJrEiblZ841MwQNAXqids4toQ=w128-h128-rw",
+    "title": "WeMuslim: Athan, Qibla&Quran - Apps on Google Play",
+    "summary": "All-in-One Muslim Guide: Prayer Times, Athan, Qibla, Quran",
+    "source": "https://play.google.com/store/apps/details?id=com.fyxtech.muslim",
+    "fetched": true
+  },
+  "vm-player": {
+    "icon": "https://play-lh.googleusercontent.com/JY8S4YY7pWREguK6V-mVW03ggJ6A5C2uRPqJXtI4k51_fg9zM74MBM2bKMVY0ljTPHdlhtwUVErdwBOu2dC0tQ=w128-h128-rw",
+    "title": "VMPlayer – HD Video Player - Apps on Google Play",
+    "summary": "VMPlayer — HD video & audio player with fast streaming and URL playback",
+    "source": "https://play.google.com/store/apps/details?id=com.zyro.vmplayer.player",
+    "fetched": true
+  },
+  "basitcreation-app": {
+    "icon": "https://play-lh.googleusercontent.com/abYOMiH_hwQR7Ef0hdg2zIMcpyPBPauwryXtCB6bG-A6VQ_m2uY7Nx9Ho59sKFzGOIDokRzasUPBEoOP_5E-=w128-h128-rw",
+    "title": "Basit Creation – Urdu Poetry - Apps on Google Play",
+    "summary": "Create, read, and share Urdu poetry with images, themes, and community.",
+    "source": "https://play.google.com/store/apps/details?id=com.basitcreation.app",
+    "fetched": true
+  },
+  "mere-yaaroun-poetry": {
+    "icon": "https://play-lh.googleusercontent.com/584gxepie-q2yWZL1Z7Zj3mUt1aXlkLc20Xebfu4VslDQNMVlTqlsQBRxrAmAo124e7YduuAkka1owLDIw8Ur4I=w128-h128-rw",
+    "title": "Mere Yaaroun - Apps on Google Play",
+    "summary": "An App which contains the poetry collection of my father Muhammad Yousuf Rahi.",
+    "source": "https://play.google.com/store/apps/details?id=com.poetryapp.mereyaaroun",
+    "fetched": true
+  },
+  "boardspy": {
+    "icon": "https://play-lh.googleusercontent.com/2A0Gf8Ahdae5qFLmwBf_lGAH_BxaP4DMQFVDmFHPJTIR1VYyoo6N6FtUDpJ2czqTdC7jC_V0yePnuCAAOtpRjQ=w128-h128-rw",
+    "title": "BoardSpy: Route Planner & AI - Apps on Google Play",
+    "summary": "Beat traffic & save time every commute. AI voice routes, carpool & weather ahead",
+    "source": "https://play.google.com/store/apps/details?id=site.boardspy.app",
+    "fetched": true
+  },
+  "intellitools-ai": {
+    "icon": "https://www.intellitoolsai.app/var/www/intellitoolai/Frontend/assests/IntelliTools-WhiteBg.2efb878a7fe8.png",
+    "title": "IntelliTools AI — AI Tools for Life, Intelligence for Everyone",
+    "summary": "Discover 50+ free AI-powered tools for education, coding, content analysis, file conversion, and trading. Smart AI utilities available 24/7.",
+    "source": "https://www.intellitoolsai.app/",
+    "fetched": true
+  },
+  "karachi-bus-map-app": {
+    "icon": "https://play-lh.googleusercontent.com/bP8tZ8ayq0OEfW5Cove23pfwstgn2zqE8y5kzkCo5Phdp7yV1_4GJ4ZRrt2sDog9WHC4rJfTRasgjG1sH1yCvg=w128-h128-rw",
+    "title": "Karachi Bus Route Locator - Apps on Google Play",
+    "summary": "KBRL includes these functionalities: Search Routes, Check Routes & Google Map.",
+    "source": "https://play.google.com/store/apps/details?id=com.kbrl.mapapp",
+    "fetched": true
+  },
+  "spendbook": {
+    "icon": "https://play-lh.googleusercontent.com/FkFIJhhSwvww-JTnT_E4Se88uMLMHKiPYbGyfifo85o5-Jbk39efXeqOPpKgmhx72y3XiOwXCMLnQ2GXhKAUsQ=w128-h128-rw",
+    "title": "SpendBook - Expense Tracker - Apps on Google Play",
+    "summary": "Track your monthly budget, record expenses & income, and export PDF reports.",
+    "source": "https://play.google.com/store/apps/details?id=com.dk.spendbook.app",
+    "fetched": true
+  },
+  "mentorspace": {
+    "icon": null,
+    "title": "MentorSpace",
+    "summary": "Mentorship platform (launched on Product Hunt)",
+    "source": "https://www.producthunt.com/products/mentorspace",
+    "fetched": false
+  },
+  "balancio": {
+    "icon": null,
+    "title": "Balancio: Budget & Money App App - App Store",
+    "summary": "Download Balancio: Budget & Money App by Osama Fahim on the App Store. See screenshots, ratings and reviews, user tips, and more apps like Balancio: Budget &…",
+    "source": "https://apps.apple.com/us/app/balancio-budget-money-app/id6754840078",
+    "fetched": false
+  },
+  "ronaldo-app": {
+    "icon": "https://play-lh.googleusercontent.com/qr7Qo5c8ITOt5p8m5XqdzTvtQ-gBQGB4UEeaiH4FS1c_g6UjJhMZ6gVzdkf6JYDyO_5COENdNNsGOY7yKpliBQ=w128-h128-rw",
+    "title": "Ronaldo Wallpapers 4K CR7 - Apps on Google Play",
+    "summary": "CR7 4K wallpapers, auto wallpaper changer & Ronaldo football backgrounds HD",
+    "source": "https://play.google.com/store/apps/details?id=com.devawais.ronaldo",
+    "fetched": true
+  },
+  "ledgr-inventory": {
+    "icon": null,
+    "title": "LEDGR Inventory",
+    "summary": "n8n-automation inventory tool: talk to AI to insert/delete/check products via chat",
+    "source": "https://muhammadtaha-dev.github.io/LEDGR-inventory/",
+    "fetched": false
+  },
+  "mnemonicly-vocabulary-builder": {
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/46/c9/59/46c9598f-a341-b009-108b-6ec89f5d3a7f/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/64x64ia-75.webp",
+    "title": "Mnemonicly: Vocabulary Builder App - App Store",
+    "summary": "Download Mnemonicly: Vocabulary Builder by Faizan Qazi on the App Store. See screenshots, ratings and reviews, user tips, and more apps like Mnemonicly:…",
+    "source": "https://apps.apple.com/us/app/mnemonicly-vocabulary-builder/id6762747025",
+    "fetched": true
+  },
+  "notableai": {
+    "icon": "https://notableai.com/landing-v1/meetings/hero-section-image.webp",
+    "title": "NotableAI | AI Meeting Assistant & Dictation Tool",
+    "summary": "Capture, transcribe, and clarify your thoughts with NotableAI. Your notes stay safe, private, and searchable. Built for meetings, memos, and dictation.",
+    "source": "https://notableai.app/",
+    "fetched": true
+  },
+  "admob-revenue-calculator": {
+    "icon": "https://platform.itcians.com/storage/settings/ijKZUt4B5vWGV3a7SFyDGkLHGWAOCvCmrodAU80O.png",
+    "title": "Admob revenue calculator and cloud costing at one place",
+    "summary": "Calculate your monthly Firestore costs and AdMob revenue instantly. Professional tool for app developers.",
+    "source": "https://admobrevenuecalculator.itcians.com/",
+    "fetched": true
+  },
+  "calories-tracker": {
+    "icon": "https://play-lh.googleusercontent.com/vAsFwP4iWI0ssi3IaXlgWtp2cFpel6a7kEGBkoMryC9HpptPcuR7WVY8TJa-37TF--T90MpxSfYM_o592miSXg=w128-h128-rw",
+    "title": "AI Food Calorie Tracker CalEye - Apps on Google Play",
+    "summary": "AI food calorie tracker, snap a photo, get nutrition in 5 sec.",
+    "source": "https://play.google.com/store/apps/details?id=com.caleye.caloriescounter",
+    "fetched": true
+  },
+  "shieldcheck": {
+    "icon": "data:image/svg+xml,<svg xmlns=",
+    "title": "Hercules App",
+    "summary": "An app made by https://hercules.app",
+    "source": "https://shieldcheck.onhercules.app/",
+    "fetched": true
+  },
+  "taskaro": {
+    "icon": "https://taskaro.web.app/launcher_icon.png",
+    "title": "Taskaro — Plan. Track. Achieve.",
+    "summary": "Organize your tasks, track progress, sync across devices, and never miss a deadline.",
+    "source": "https://taskaro.web.app/",
+    "fetched": true
+  },
+  "letterly": {
+    "icon": "https://letterly.app/apple-touch-icon.png",
+    "title": "Letterly · AI speech to clear text mobile app",
+    "summary": "Turn speech into perfect text. For people who",
+    "source": "https://letterly.app/",
+    "fetched": true
+  },
+  "pray-times-azan-reminder": {
+    "icon": "https://play-lh.googleusercontent.com/HwDmIyv1eIRnPlX-WHI55HC7l9ddICPr7DgfVQ8Pu4DkemPLYgd-r1BLAmXL5bb3JI-9YrAfD2fV0nzBQedunIg=w128-h128-rw",
+    "title": "Prayer Times - Azan Pro Muslim - Apps on Google Play",
+    "summary": "Athan and Namaz time app for muslims. Quran Majeed, Mecca Compass, Salata",
+    "source": "https://play.google.com/store/apps/details?id=com.avirise.praytimes.azanreminder",
+    "fetched": true
+  },
+  "prayer-times-qibla-adhan": {
+    "icon": null,
+    "title": "Prayer Times Qibla Adhan",
+    "summary": "Prayer times, qibla and adhan app",
+    "source": "https://play.google.com/store/apps/details?id=com.prayertimes.qibla.adhan",
+    "fetched": false
+  },
+  "data-insight": {
+    "icon": null,
+    "title": "Data Insight",
+    "summary": "SaaS that turns raw data into actionable insights for data scientists/analysts",
+    "source": "https://data-insight-assistant.vercel.app/",
+    "fetched": false
+  },
+  "artnie": {
+    "icon": "https://play-lh.googleusercontent.com/FxnZ5gwaSXrXMEoQ2abgk1Hvsyghki0W8MO68FVHZcvDg2Gf1K3es86viP1AItxW5d6sOkoon7qolWOyfVOaRw=w128-h128-rw",
+    "title": "Artnie AI Graphic Design Maker - Apps on Google Play",
+    "summary": "Easy drag and drop AI graphic design app for cards, posters,banners & Images.",
+    "source": "https://play.google.com/store/apps/details?id=com.inkkaro.app",
+    "fetched": true
+  },
+  "colormagic": {
+    "icon": "https://colormagic.app/img/apple-touch-icon.png",
+    "title": "AI Color Palette Generator - ColorMagic",
+    "summary": "Create beautiful color palettes with our free AI color palette generator. Generate color palettes from names, images, text, or hex codes in seconds!",
+    "source": "https://colormagic.app/",
+    "fetched": true
+  },
+  "mufasa-subscription-manager": {
+    "icon": null,
+    "title": "Mufasa: Subscription Manager",
+    "summary": "Subscription manager app (closed testing)",
+    "source": "https://play.google.com/store/apps/details?id=dev.briyani.subscriptions",
+    "fetched": false
+  },
+  "brainiq": {
+    "icon": null,
+    "title": "BrainIQ",
+    "summary": "Brain/IQ quiz app (closed testing)",
+    "source": "https://play.google.com/store/apps/details?id=com.tsolutions.brainiq",
+    "fetched": false
+  },
+  "show-first-card-game": {
+    "icon": "https://play-lh.googleusercontent.com/pvpp3UihH0O8mYt5DQ8ESnrQTpPyPdXRxMpKcf3ooNp9N-L4oFi0-GKju2BQrD3Kv3H8w-alKmOVSk4no4pu1g=w128-h128-rw",
+    "title": "Show First: Card Game - Apps on Google Play",
+    "summary": "Discard smart. Call SHOW. Strategy card game for rummy & teen patti fans.",
+    "source": "https://play.google.com/store/apps/details?id=com.showfirst.app",
+    "fetched": true
+  },
+  "quran-for-all": {
+    "icon": "https://play-lh.googleusercontent.com/s4T-sCnLMFp-N1lKGiiMnFGPtfU-X8dk7HL1Rgk0UYzC5iGtUGCtS3yIkqucWcS_7ajnGWS7pYRECY_lX8ve=w128-h128-rw",
+    "title": "Qur'an for All - Apps on Google Play",
+    "summary": "Learn the Qur'an through structured Tafsir, Hadith, Seerah & Islamic lectures.",
+    "source": "https://play.google.com/store/apps/details?id=com.theappcentral.quranforall",
+    "fetched": true
+  },
+  "boardspy-ios": {
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/be/57/e0/be57e0c6-30fb-f06f-a1ee-cb06fc57c100/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/64x64ia-75.webp",
+    "title": "BoardSpy: Route Planner & Trip App - App Store",
+    "summary": "Download BoardSpy: Route Planner & Trip by BoardSpy Inc. on the App Store. See screenshots, ratings and reviews, user tips, and more apps like BoardSpy: Route…",
+    "source": "https://apps.apple.com/us/app/boardspy-route-planner-trip/id6777167408",
+    "fetched": true
+  },
+  "cashlytics-tracker": {
+    "icon": "https://play-lh.googleusercontent.com/3H4xB6WVpwWdea3m-BVQtci44em7j6vR56TMVgk9sO7kR4GeWec3yaWJb73j57xX_F3xcLPtKdXrWgFof_dqtQ=w128-h128-rw",
+    "title": "Cashlytics: Debt & Expenses - Apps on Google Play",
+    "summary": "Track money in 5 languages. Auto-log bank SMS. Ledger, expenses & notebook.",
+    "source": "https://play.google.com/store/apps/details?id=com.cashlytics_tracker",
+    "fetched": true
+  },
+  "lumex-ai": {
+    "icon": null,
+    "title": "Lumex AI",
+    "summary": "AI photo upscaler: makes blurry/low-res photos sharp up to 16x larger",
+    "source": "https://play.google.com/store/apps/details?id=com.azgard.labs.lumexai",
+    "fetched": false
+  },
+  "arrow-drift": {
+    "icon": "https://play-lh.googleusercontent.com/OpqdoVU-tQWIeiIR9aRq_HH4yMwheMhn7G_UNbvcm7LGcT7vlaM-LRC3uEXUcpm-odEJxUkfxwFugfJnf3gdAw=w128-h128-rw",
+    "title": "Arrow Drift: Slide Puzzle Game - Apps on Google Play",
+    "summary": "Tap arrows, solve 500+ puzzles. Daily challenges, ELO rankings & brain teasers.",
+    "source": "https://play.google.com/store/apps/details?id=com.stacktree.arrowdrift",
+    "fetched": true
+  },
+  "speakly": {
+    "icon": null,
+    "title": "Speakly",
+    "summary": "Language/speaking practice app (Arabic)",
+    "source": "https://play.google.com/store/apps/details?id=com.idraakailabs.speakly",
+    "fetched": false
+  },
+  "medkeep": {
+    "icon": "https://play-lh.googleusercontent.com/uYG4NDg7mmKAtfhdLrbyMo3KZCrAThHGxM1joRQtVgdrxiXztQ43QZpBWK9pHYdJGTnIsTRnOlupNOkh4Ij0zSs=w128-h128-rw",
+    "title": "MedKeep - Health Records - Apps on Google Play",
+    "summary": "Family health records, encrypted on device. Meds, vitals & doctors visits",
+    "source": "https://play.google.com/store/apps/details?id=com.medkeep.app",
+    "fetched": true
+  },
+  "dropwise-share": {
+    "icon": null,
+    "title": "Dropwise Share",
+    "summary": "File/content sharing app",
+    "source": "https://play.google.com/store/apps/details?id=app.dropwise.share",
+    "fetched": false
+  },
+  "whispercar": {
+    "icon": "https://play-lh.googleusercontent.com/TwD2IUfeFn2DV1g_kzMzIbVH6tARFynDi4RcBVNCamaL3Y02aKilfLw_l_inqYOQ2fMrAAjaxMcB7Q4CaZ1v6Q=w128-h128-rw",
+    "title": "WhisperCar - Apps on Google Play",
+    "summary": "Chat with your car — AI diagnostics, maintenance reminders & service advice.",
+    "source": "https://play.google.com/store/apps/details?id=com.whispercar.ai",
+    "fetched": true
+  },
+  "doomlift": {
+    "icon": "https://play-lh.googleusercontent.com/fNiBIQWnGoxCH7sE69cCXYAHC4IkVB6tvTG7H8HY5rHEyYTOsu4KnD92vIpjxF94qB0FEr_fnH6p2CH3b2GKfDg=w128-h128-rw",
+    "title": "DoomLift - Apps on Google Play",
+    "summary": "Your phone wants you to scroll. DoomLift makes you earn it.",
+    "source": "https://play.google.com/store/apps/details?id=com.softotic.doomlift",
+    "fetched": true
+  },
+  "wird": {
+    "icon": null,
+    "title": "Wird",
+    "summary": "Islamic habit & dhikr app with pro tier",
+    "source": "https://play.google.com/store/apps/details?id=io.wird.app",
+    "fetched": false
+  },
+  "all-video-downloader": {
+    "icon": "https://play-lh.googleusercontent.com/EHec2p-HbO3hwGVYuvA7Nt_5IEUrNiRsMEP0vhNRZFEPc759m_L2GpBq3wc0Sljdhp4AGQER6F8OM7uvWetMk90=w128-h128-rw",
+    "title": "All Video Downloader & Player - Apps on Google Play",
+    "summary": "Download HD videos & reels instantly. Fast & HD video saver.",
+    "source": "https://play.google.com/store/apps/details?id=com.allviddown.downloader",
+    "fetched": true
+  },
+  "notivault": {
+    "icon": "https://play-lh.googleusercontent.com/Y7gWkWjZmWVBay5A5z4iiu5_P7iS9-DllEtOrS8ZPGWuYnGqtoEbD1V-GMy-ik1AV2fzlWeZ1eyEVDmaht9ycQ=w128-h128-rw",
+    "title": "NotiVault: Recover Messages - Apps on Google Play",
+    "summary": "Save your notification log, read deleted messages, and never miss an alert again",
+    "source": "https://play.google.com/store/apps/details?id=com.samobilelabs.notivault",
+    "fetched": true
+  },
+  "taskaro-v2": {
+    "icon": "https://play-lh.googleusercontent.com/UbHmSq4MrKpv4ByjF64nUjSZMVK2fNBTSJ4wA1ttr5q09qkatK10qwcuakSswOMJtVb2QE1NB1568ZXdoOE-XQ=w128-h128-rw",
+    "title": "Taskaro: To Do List & Notes - Apps on Google Play",
+    "summary": "Taskaro helps you plan, track tasks, keep notes and stay productive daily",
+    "source": "https://play.google.com/store/apps/details?id=org.app.taskaro",
+    "fetched": true
+  },
+  "ai-content-master": {
+    "icon": "https://play-lh.googleusercontent.com/juZuibVcN-K2CgTbAwLa06L1yUBF1Jt6p-saplSmzMLxwJjvwgphdL2HUknHsSdGL9woJckpOrXIrF4A7G61ew=w128-h128-rw",
+    "title": "AI Content Master - Apps on Google Play",
+    "summary": "All-in-one content creation. Generate articles, social posts, Explain Picture.",
+    "source": "https://play.google.com/store/apps/details?id=kkcoders.ai.content.master",
+    "fetched": true
+  },
+  "leadfnf-analytics": {
+    "icon": null,
+    "title": "LeadFnF Analytics",
+    "summary": "Lightweight web analytics replacing GA4 + Hotjar: real-time pageviews, session replays, heatmaps, funnels, AI insights (3KB script)",
+    "source": "https://www.producthunt.com/products/leadfnf-analytics-session-replay-flow",
+    "fetched": false
+  },
+  "fuel-log-noorify-fuel-tracker": {
+    "icon": null,
+    "title": "Fuel Log (Noorify Fuel Tracker)",
+    "summary": "Fuel tracker and mileage app",
+    "source": "https://play.google.com/store/apps/details?id=com.noorify.fueltracker",
+    "fetched": false
+  },
+  "qirayah-quran-app": {
+    "icon": null,
+    "title": "Qirayah (Quran App)",
+    "summary": "Quran app, live on Google Play for testing",
+    "source": "https://play.google.com/store/apps/details?id=com.quran.qirayah",
+    "fetched": false
+  },
+  "ai-product-image-editor": {
+    "icon": "https://apps.shopify.com/cdn/shopifycloud/shopify_app_store/assets/favicon-3d790b3e382c5c5d7167509177c07784a9b8324b90473d7eb43c83dc1967b97d.png",
+    "title": "AICRAFT ‑ Product Image Editor - Studio-grade product photos editing in one click with AI. | Shopify App Store",
+    "summary": "Turn any product photo into a polished, on-brand shot with AI. Try outfits on models, fix lighting, publish to Shopify in one click. No designer needed.",
+    "source": "https://apps.shopify.com/ai-product-image-editor",
+    "fetched": true
+  },
+  "invoice-payroll-management-system": {
+    "icon": null,
+    "title": "Invoice & Payroll Management System",
+    "summary": "Smart Invoice & Payroll Management Platform for growing teams.",
+    "source": "https://invoice-and-payrol-l-management-sys.vercel.app/",
+    "fetched": false
+  },
+  "founderbrief": {
+    "icon": "https://storage.googleapis.com/gpt-engineer-file-uploads/kh4Tf3hCPKXaHih8KZC0cbKy3PR2/social-images/social-1781646801887-founderbriefe.webp",
+    "title": "FounderBrief — Your weekly brief",
+    "summary": "One brief. Every Monday. No noise.",
+    "source": "https://founderbreif.vercel.app/",
+    "fetched": true
+  },
+  "locovise": {
+    "icon": null,
+    "title": "Locovise, Smart Travel Planning Tools",
+    "summary": "Tell us your budget, we",
+    "source": "https://locovise.com/",
+    "fetched": false
+  },
+  "autoremind-ai": {
+    "icon": "https://www.autoremind.ai/images/autoremind%20black%20nav.png",
+    "title": "AI Follow-Up Reminders for Slack, Email & Teams | autoremind.ai",
+    "summary": "Automate AI follow-up reminders across Slack, Email & Microsoft Teams. Tone escalates automatically until you get a reply. Free - set up in 30 seconds.",
+    "source": "https://www.autoremind.ai/",
+    "fetched": true
+  }
+}
