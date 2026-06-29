@@ -506,11 +506,13 @@
 
   function renderDetail(product) {
     const meta = getMeta(product, { full: true });
-    const city = product.city ? `<p class="detail-city">${escapeHtml(product.city)}</p>` : "";
+    const city = product.city ? ` · ${escapeHtml(product.city)}` : "";
+    const statusPill = product.link
+      ? '<span class="detail-status detail-status--live">Live</span>'
+      : '<span class="detail-status detail-status--soon">Link pending</span>';
 
     const linksBlock = product.link
-      ? `<p class="detail-links-label">Visit this ship</p>
-          <a class="btn btn-ink detail-cta" href="${escapeHtml(product.link)}" target="_blank" rel="noopener noreferrer">
+      ? `<a class="btn btn-ink detail-cta" href="${escapeHtml(product.link)}" target="_blank" rel="noopener noreferrer">
             ${escapeHtml(linkLabel(product.link))} →
           </a>
           <a class="detail-source-link" href="${escapeHtml(product.link)}" target="_blank" rel="noopener noreferrer">
@@ -520,42 +522,49 @@
 
     const aboutParagraphs = meta.about
       .split(/\n\n+/)
-      .map((p) => `<p class="detail-desc">${escapeHtml(p.trim())}</p>`)
+      .filter((p) => p.trim())
+      .map((p, i) =>
+        i === 0
+          ? `<p class="detail-lead">${escapeHtml(p.trim())}</p>`
+          : `<p class="detail-desc">${escapeHtml(p.trim())}</p>`
+      )
       .join("");
 
     return `
-      <div class="detail-hero">
-        <div class="detail-hero-visual" aria-hidden="false">
-          <div class="detail-icon-aura" aria-hidden="true"></div>
-          <div class="detail-icon-frame">
-            ${renderIcon(product, "card-icon--lg")}
+      <article class="book-sheet">
+        <header class="detail-masthead">
+          <div class="detail-masthead-visual">
+            <div class="detail-icon-aura" aria-hidden="true"></div>
+            <div class="detail-icon-frame">
+              ${renderIcon(product, "card-icon--lg")}
+            </div>
           </div>
-        </div>
-        <div class="detail-head">
-          ${platformChip(product.type)}
-          <h2 class="detail-title" id="detail-title">${escapeHtml(meta.title)}</h2>
-          ${renderRating(product, "card-rating detail-rating")}
-          <p class="detail-builder"><span class="builder-label">Shipped by</span> <strong>${escapeHtml(product.builder)}</strong></p>
-          ${city}
-        </div>
-      </div>
-      <div class="detail-body">
-        <section class="detail-section detail-about">
-          <p class="detail-kicker">What it does</p>
-          <div class="detail-about-text">${aboutParagraphs}</div>
+          <div class="detail-masthead-body">
+            <div class="detail-masthead-tags">
+              ${platformChip(product.type)}
+              ${statusPill}
+            </div>
+            <h2 class="detail-title" id="detail-title">${escapeHtml(meta.title)}</h2>
+            ${renderRating(product, "card-rating detail-rating")}
+            <p class="detail-byline">
+              <span class="detail-byline-label">Shipped by</span>
+              <strong>${escapeHtml(product.builder)}</strong>${city}
+            </p>
+          </div>
+        </header>
+
+        <section class="detail-about" aria-labelledby="detail-about-label">
+          <h3 class="detail-section-label" id="detail-about-label">About this ship</h3>
+          <div class="detail-prose">${aboutParagraphs}</div>
         </section>
-        <section class="detail-section detail-meta-section">
-          <p class="detail-kicker">Details</p>
-          <dl class="detail-meta">
-            <div><dt>Platform</dt><dd>${escapeHtml(typeLabel(product.type))}</dd></div>
-            <div><dt>Builder</dt><dd>${escapeHtml(product.builder)}</dd></div>
-            <div><dt>Status</dt><dd>${product.link ? "Live & shipped" : "Shipped · link pending"}</dd></div>
-          </dl>
+
+        <section class="detail-actions" aria-label="Visit product">
+          <h3 class="detail-section-label">Open ship</h3>
+          <div class="detail-actions-inner">
+            ${linksBlock}
+          </div>
         </section>
-        <section class="detail-section detail-links-section">
-          ${linksBlock}
-        </section>
-      </div>`;
+      </article>`;
   }
 
   function shortUrl(url) {
