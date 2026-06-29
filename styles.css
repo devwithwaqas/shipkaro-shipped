@@ -1463,13 +1463,13 @@ body.modal-open {
     display: flex;
     align-items: stretch;
     position: relative;
-    width: 74px;
+    width: 46px;
     flex-shrink: 0;
     overflow: visible;
     transform-origin: right center;
     transform: rotateY(78deg);
     transition: transform 520ms cubic-bezier(0.2, 0.85, 0.25, 1);
-    filter: drop-shadow(-6px 2px 16px rgba(45, 31, 82, 0.28));
+    filter: drop-shadow(-4px 1px 10px rgba(45, 31, 82, 0.2));
   }
 
   .detail-overlay.is-open .book-cover {
@@ -1479,10 +1479,10 @@ body.modal-open {
   /* Stacked page edges peeking beside binding */
   .book-page-stack {
     position: absolute;
-    top: 14px;
-    bottom: 14px;
-    right: -4px;
-    width: 5px;
+    top: 16px;
+    bottom: 16px;
+    right: -3px;
+    width: 3px;
     z-index: 0;
     pointer-events: none;
   }
@@ -1496,8 +1496,8 @@ body.modal-open {
   }
 
   .book-page-sheet:nth-child(1) { transform: translateX(0); }
-  .book-page-sheet:nth-child(2) { transform: translateX(2px); opacity: 0.85; }
-  .book-page-sheet:nth-child(3) { transform: translateX(4px); opacity: 0.65; }
+  .book-page-sheet:nth-child(2) { transform: translateX(1px); opacity: 0.8; }
+  .book-page-sheet:nth-child(3) { transform: translateX(2px); opacity: 0.55; }
 
   .book-binding {
     position: relative;
@@ -1507,82 +1507,27 @@ body.modal-open {
     height: 100%;
   }
 
-  /* Matte cloth spine */
   .book-spine {
     position: relative;
-    width: 22px;
+    width: 14px;
     flex-shrink: 0;
-    border-radius: 4px 0 0 4px;
+    border-radius: 3px 0 0 3px;
     overflow: hidden;
-    background: linear-gradient(90deg,
-      #2a1d4a 0%,
-      #4a3580 35%,
-      #5a4090 50%,
-      #4a3580 65%,
-      #2a1d4a 100%);
-    box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.22);
+    background: linear-gradient(90deg, #2a1d4a, #4a3580 50%, #2a1d4a);
+    box-shadow: inset -1px 0 4px rgba(0, 0, 0, 0.2);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 22px 0;
   }
 
   .book-spine-leather {
     position: absolute;
     inset: 0;
     background: url("assets/book-leather.svg");
-    background-size: 48px 48px;
-    opacity: 0.28;
+    background-size: 32px 32px;
+    opacity: 0.2;
     mix-blend-mode: multiply;
     pointer-events: none;
-  }
-
-  .book-spine-band {
-    position: absolute;
-    left: 2px;
-    right: 2px;
-    height: 6px;
-    border-radius: 1px;
-    background: #3d2a6b;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    pointer-events: none;
-  }
-
-  .book-spine-band--a { top: 20%; }
-  .book-spine-band--b { top: 50%; transform: translateY(-50%); }
-  .book-spine-band--c { bottom: 20%; }
-
-  .book-spine-stitch {
-    position: absolute;
-    top: 14px;
-    bottom: 14px;
-    width: 1px;
-    background: repeating-linear-gradient(
-      180deg,
-      transparent 0 6px,
-      rgba(180, 160, 120, 0.35) 6px 7px,
-      transparent 7px 12px
-    );
-    pointer-events: none;
-  }
-
-  .book-spine-stitch--outer { left: 3px; }
-  .book-spine-stitch--inner { right: 3px; }
-
-  .book-spine-title {
-    position: relative;
-    z-index: 1;
-    font-family: var(--font-mono);
-    font-size: 0.48rem;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    color: rgba(200, 185, 150, 0.7);
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    text-transform: uppercase;
-    user-select: none;
   }
 
   .book-spine-mark {
@@ -1591,73 +1536,51 @@ body.modal-open {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 16px;
-    height: 16px;
-    border-radius: 4px;
-    background: rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(180, 160, 120, 0.25);
+    width: 10px;
+    height: 10px;
+    opacity: 0.75;
   }
 
   .book-spine-mark img {
-    width: 11px;
-    height: 11px;
+    width: 10px;
+    height: 10px;
     object-fit: contain;
-    opacity: 0.9;
-  }
-
-  .book-spine-publisher {
-    position: relative;
-    z-index: 1;
-    font-family: var(--font-mono);
-    font-size: 0.36rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgba(237, 230, 255, 0.4);
-    writing-mode: vertical-rl;
-    user-select: none;
   }
 
   .book-hinge {
-    width: 3px;
+    width: 2px;
     flex-shrink: 0;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.08));
+    background: rgba(0, 0, 0, 0.15);
   }
 
   .book-cover-face {
     position: relative;
     z-index: 1;
-    flex: 0 0 46px;
-    width: 46px;
-    border-radius: 0 8px 8px 0;
+    flex: 0 0 28px;
+    width: 28px;
+    border-radius: 0 6px 6px 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    padding: 18px 5px;
+    gap: 10px;
+    padding: 14px 3px;
     writing-mode: vertical-rl;
-    text-orientation: mixed;
     transform: rotate(180deg);
-    background: linear-gradient(180deg, #4a3580 0%, var(--purple-deep) 100%);
-    border: 1px solid color-mix(in srgb, var(--purple-deep) 80%, #2a1d4a);
+    background: linear-gradient(180deg, #453070, var(--purple-deep));
     border-left: none;
-    box-shadow: inset -3px 0 8px rgba(0, 0, 0, 0.12);
+    box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.1);
   }
 
   .book-cover-leather {
     position: absolute;
     inset: 0;
     background: url("assets/book-leather.svg");
-    background-size: 48px 48px;
-    opacity: 0.22;
+    background-size: 32px 32px;
+    opacity: 0.18;
     mix-blend-mode: multiply;
     pointer-events: none;
-  }
-
-  .book-cover-sheen {
-    display: none;
   }
 
   .book-cover-medallion {
@@ -1666,71 +1589,35 @@ body.modal-open {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
     flex-shrink: 0;
-  }
-
-  .book-cover-foil-ring {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    pointer-events: none;
-    opacity: 0.55;
   }
 
   .book-cover-icon-well {
-    position: relative;
-    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 8px;
-    background: rgba(245, 240, 255, 0.92);
-    border: 1px solid rgba(237, 230, 255, 0.8);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background: rgba(245, 240, 255, 0.9);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   }
 
   .book-cover-icon {
-    width: 18px;
-    height: 18px;
+    width: 13px;
+    height: 13px;
     object-fit: contain;
-    flex-shrink: 0;
-  }
-
-  .book-cover-type {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
   }
 
   .book-cover-label {
+    position: relative;
+    z-index: 1;
     font-family: var(--font-mono);
-    font-size: 0.46rem;
+    font-size: 0.38rem;
     font-weight: 600;
-    color: rgba(237, 230, 255, 0.8);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    white-space: nowrap;
-    line-height: 1;
-  }
-
-  .book-cover-foil {
-    font-family: var(--font-mono);
-    font-size: 0.36rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(180, 160, 120, 0.65);
-    white-space: nowrap;
-    padding-top: 6px;
-    border-top: 1px solid rgba(180, 160, 120, 0.25);
+    color: rgba(237, 230, 255, 0.55);
+    letter-spacing: 0.14em;
+    user-select: none;
   }
 }
 
@@ -1874,98 +1761,71 @@ body.modal-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: min(100%, 200px);
-  height: 200px;
+  width: min(100%, 180px);
+  height: 180px;
   margin: 0 auto;
   padding: 0;
   border: none;
-  border-radius: 0;
   background: transparent;
   overflow: visible;
   flex-shrink: 0;
 }
 
-.detail-hero-visual::before {
-  content: "";
+.detail-icon-aura {
   position: absolute;
-  inset: 18px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(var(--icon-glow), 0.22) 0%, transparent 68%);
-  pointer-events: none;
-  animation: detail-icon-pulse 3.2s ease-in-out infinite;
-}
-
-.detail-hero-visual::after {
-  content: "";
-  position: absolute;
-  width: 156px;
-  height: 156px;
-  border-radius: 50%;
-  border: 1.5px dashed color-mix(in srgb, var(--purple) 28%, var(--rule));
-  pointer-events: none;
-  opacity: 0.7;
-}
-
-@keyframes detail-icon-pulse {
-  0%, 100% { transform: scale(0.96); opacity: 0.75; }
-  50% { transform: scale(1.04); opacity: 1; }
-}
-
-.detail-hero-visual-bg {
-  position: absolute;
-  inset: 24px;
-  border-radius: var(--radius-lg);
-  background:
-    radial-gradient(ellipse 100% 90% at 50% 30%, color-mix(in srgb, var(--purple) 14%, transparent), transparent 72%),
-    linear-gradient(180deg, var(--purple-soft), transparent);
-  border: 1.5px solid color-mix(in srgb, var(--purple) 14%, var(--rule));
+  background: radial-gradient(circle, rgba(var(--icon-glow), 0.18) 0%, transparent 70%);
   pointer-events: none;
 }
 
-.detail-hero-visual-bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 12%;
-  right: 12%;
-  height: 3px;
-  border-radius: 0 0 4px 4px;
-  background: linear-gradient(90deg, #9B6DFF, #2DD4BF, #38BDF8, #6B4DB8);
-}
-
-.detail-hero-visual .icon-stage {
+.detail-icon-frame {
   position: relative;
   z-index: 2;
-  transform: scale(1.12);
+  padding: 2.5px;
+  border-radius: 26%;
+  background: conic-gradient(from 200deg, #9B6DFF, #2DD4BF, #38BDF8, #6B4DB8, #9B6DFF);
+  box-shadow:
+    0 14px 36px rgba(var(--icon-glow), 0.22),
+    0 4px 12px rgba(107, 77, 184, 0.12);
+}
+
+.detail-icon-frame::after {
+  content: "";
+  position: absolute;
+  inset: 2.5px;
+  border-radius: 24%;
+  background: var(--paper);
+  z-index: 0;
+}
+
+.detail-icon-frame .icon-stage {
+  position: relative;
+  z-index: 1;
+  transform: none;
 }
 
 .detail-hero-visual .card-icon {
-  border: 2px solid rgba(255, 255, 255, 0.92);
+  border: none;
   border-radius: 22%;
-  box-shadow:
-    0 0 0 1px rgba(var(--icon-glow), 0.2),
-    0 1px 0 rgba(255, 255, 255, 0.98) inset,
-    0 16px 40px rgba(var(--icon-glow), 0.32),
-    0 8px 24px rgba(107, 77, 184, 0.18),
-    0 2px 8px rgba(14, 11, 20, 0.08);
+  box-shadow: 0 10px 28px rgba(var(--icon-glow), 0.26);
 }
 
 .detail-hero-visual .icon-tile {
   border-radius: 22%;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.9),
-    0 4px 20px rgba(var(--icon-glow), 0.3);
+  box-shadow: none;
 }
 
 .icon-stage.card-icon--lg .icon-tile,
 .icon-stage.card-icon--lg .card-icon .icon-tile {
-  width: 112px;
-  height: 112px;
+  width: 108px;
+  height: 108px;
 }
 
 .icon-stage.card-icon--lg .icon-tile .icon-art {
-  width: 112px;
-  height: 112px;
+  width: 108px;
+  height: 108px;
 }
 
 .detail-head {
@@ -2140,13 +2000,13 @@ body.modal-open {
 
 @media (max-width: 480px) {
   .detail-hero-visual {
-    width: min(100%, 168px);
-    height: 168px;
+    width: min(100%, 156px);
+    height: 156px;
   }
 
-  .detail-hero-visual::after {
-    width: 132px;
-    height: 132px;
+  .detail-icon-aura {
+    width: 120px;
+    height: 120px;
   }
 
   .icon-stage.card-icon--lg .icon-tile,

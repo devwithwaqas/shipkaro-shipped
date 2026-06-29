@@ -526,8 +526,10 @@
     return `
       <div class="detail-hero">
         <div class="detail-hero-visual" aria-hidden="false">
-          <div class="detail-hero-visual-bg" aria-hidden="true"></div>
-          ${renderIcon(product, "card-icon--lg")}
+          <div class="detail-icon-aura" aria-hidden="true"></div>
+          <div class="detail-icon-frame">
+            ${renderIcon(product, "card-icon--lg")}
+          </div>
         </div>
         <div class="detail-head">
           ${platformChip(product.type)}
