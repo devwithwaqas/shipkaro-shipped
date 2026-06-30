@@ -885,12 +885,10 @@
         const selected = activeTab === tab.id;
         const icon = TYPE_ICONS[tab.id] || TYPE_ICONS.other;
         const title = TAB_TITLES[tab.id] || tab.label;
-        const short = TAB_SHORT[tab.id] || tab.label;
         return `<button type="button" class="category-tab" role="tab" data-type="${escapeHtml(tab.id)}"
-          aria-selected="${selected}" tabindex="${selected ? "0" : "-1"}" title="${escapeHtml(title)}" aria-label="${escapeHtml(title)} (${tab.count})">
-          <span class="tab-icon">${icon}</span>
-          <span class="tab-copy">
-            <span class="tab-short">${escapeHtml(short)}</span>
+          aria-selected="${selected}" tabindex="${selected ? "0" : "-1"}" title="${escapeHtml(title)} (${tab.count})" aria-label="${escapeHtml(title)} (${tab.count})">
+          <span class="tab-icon-stack">
+            <span class="tab-icon">${icon}</span>
             <span class="tab-count">${tab.count}</span>
           </span>
         </button>`;
