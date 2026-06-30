@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <radialGradient id="foil" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#FFF8E7"/>
+      <stop offset="35%" stop-color="#E8D5A3"/>
+      <stop offset="70%" stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#8B6914"/>
+    </radialGradient>
+    <filter id="emboss">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="blur"/>
+      <feOffset dy="1" result="offset"/>
+      <feComposite in="offset" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="inner"/>
+      <feFlood flood-color="#000" flood-opacity="0.25"/>
+      <feComposite in2="inner" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <circle cx="60" cy="60" r="54" fill="none" stroke="url(#foil)" stroke-width="3" opacity="0.9"/>
+  <circle cx="60" cy="60" r="44" fill="none" stroke="url(#foil)" stroke-width="1.5" opacity="0.65"/>
+  <circle cx="60" cy="60" r="36" fill="url(#foil)" opacity="0.12"/>
+</svg>
